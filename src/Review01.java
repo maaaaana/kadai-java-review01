@@ -1,15 +1,16 @@
 public class Review01 {
 
     public static void main(String[] args) {
-     // 商品価格（例）
-        int price = 1500;
-     // 消費税率
-        double Tax = 0.10;
-     // 消費税額
-        int TaxAmount = (int) (price*Tax);
-     // 税込金額
-        int totalPrice = (int) (price + TaxAmount);
-     // 結果を表示
-        System.out.println(price + "円の商品の税込価格は" + totalPrice + "円（消費税は" + TaxAmount + "円）です。");
+        int num1 = 1500; //商品金額
+        double num2 = 0.10; //税率
+        int result;
+        result = taxMethod(num1, num2); //税額
+        System.out.println(num1 + "円の商品の税込価格は" + (num1+result) + "円（消費税は" + result + "円）です。"); //結果
+    }
+
+    //税額計算
+    public static int taxMethod(int num1, double num2) {
+        double num = num1 * num2;
+        return (int) num;
     }
 }
